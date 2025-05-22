@@ -1,37 +1,35 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chess Player Search</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <title>Chess.com Profile Lookup</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
+    <h1>Search Chess.com Profile</h1>
 
-<div class="container">
-    <h1>Search Chess Player</h1>
-    <form method="POST">
-        <input type="text" name="username" placeholder="Enter Chess.com username" required>
+    <form method="post">
+        <input type="text" name="username" placeholder="Enter username" required>
         <button type="submit">Search</button>
     </form>
 
     {% if profile %}
-    <div class="profile">
-        <div class="profile-details">
-            <img src="{{ profile.avatar }}" alt="Player Avatar">
-            <div>
-                <h2>{{ profile.name }}</h2>
-                <p><strong>Username:</strong> {{ profile.username }}</p>
-                <p><strong>Title:</strong> {{ profile.title }}</p>
-                <p><strong>Country:</strong> {{ profile.country }}</p>
-                <p><strong>Followers:</strong> {{ profile.followers }}</p>
-                <p><strong>Last Online:</strong> {{ profile.last_online }}</p>
-                <p><strong>Joined:</strong> {{ profile.joined }}</p>
-            </div>
+        <div class="profile">
+            <h2>{{ profile.username }}</h2>
+            {% if profile.avatar %}
+                <img src="{{ profile.avatar }}" alt="Avatar" width="100">
+            {% endif %}
+            <p><strong>Name:</strong> {{ profile.name }}</p>
+            <p><strong>Status:</strong> {{ profile.status }}</p>
+            <p><strong>Location:</strong> {{ profile.location }}</p>
+            <p><strong>Country:</strong> {{ profile.country }}</p>
+            <p><strong>Followers:</strong> {{ profile.followers }}</p>
+            <p><strong>Games Played:</strong> {{ profile.games }}</p>
+            <p><strong>Rating:</strong> {{ profile.rating }}</p>
+            <p><strong>Joined:</strong> {{ profile.joined }}</p>
+            <p><strong>Last Online:</strong> {{ profile.last_online }}</p>
         </div>
-    </div>
+    {% elif request.method == "POST" %}
+        <p class="error-message">Player not found. Please check the username.</p>
     {% endif %}
-</div>
-
 </body>
 </html>
