@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ username }}'s Stats</title>
+</head>
+<body>
+    <h1>{{ username }}'s Chess Stats</h1>
+    <ul>
+        {% for type, stat in stats.items() %}
+            <li><strong>{{ type.replace('_', ' ').title() }}</strong>: Rating - {{ stat.get('rating', 'N/A') }}, Games - {{ stat.get('games', 'N/A') }}</li>
+        {% endfor %}
+    </ul>
+    <p><a href="/">Search Another Player</a></p>
+</body>
+</html>

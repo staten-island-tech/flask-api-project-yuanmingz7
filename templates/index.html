@@ -1,35 +1,33 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Chess.com Profile Lookup</title>
+    <title>Chess.com Player Lookup</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
-    <h1>Search Chess.com Profile</h1>
+    <div class="container">
+        <h1>Search Chess.com Player</h1>
+        <form method="POST">
+            <input type="text" name="username" placeholder="Enter username" required>
+            <button type="submit">Search</button>
+        </form>
 
-    <form method="post">
-        <input type="text" name="username" placeholder="Enter username" required>
-        <button type="submit">Search</button>
-    </form>
+        {% if error %}
+            <p class="error">{{ error }}</p>
+        {% endif %}
 
-    {% if profile %}
-        <div class="profile">
-            <h2>{{ profile.username }}</h2>
-            {% if profile.avatar %}
-                <img src="{{ profile.avatar }}" alt="Avatar" width="100">
-            {% endif %}
-            <p><strong>Name:</strong> {{ profile.name }}</p>
-            <p><strong>Status:</strong> {{ profile.status }}</p>
-            <p><strong>Location:</strong> {{ profile.location }}</p>
-            <p><strong>Country:</strong> {{ profile.country }}</p>
-            <p><strong>Followers:</strong> {{ profile.followers }}</p>
-            <p><strong>Games Played:</strong> {{ profile.games }}</p>
-            <p><strong>Rating:</strong> {{ profile.rating }}</p>
-            <p><strong>Joined:</strong> {{ profile.joined }}</p>
-            <p><strong>Last Online:</strong> {{ profile.last_online }}</p>
-        </div>
-    {% elif request.method == "POST" %}
-        <p class="error-message">Player not found. Please check the username.</p>
-    {% endif %}
+        {% if player %}
+            <div class="player-info">
+                <h2>{{ player.username }}</h2>
+                <img src="{{ player.avatar }}" alt="Avatar" class="avatar">
+                <p>Name: {{ player.name }}</p>
+                <p>Title: {{ player.title }}</p>
+                <p>Status: {{ player.status }}</p>
+                <p>Country: {{ player.country }}</p>
+                <p>Followers: {{ player.followers }}</p>
+                <p><a href="/player/{{ player.username }}">View Stats</a></p>
+            </div>
+        {% endif %}
+    </div>
 </body>
 </html>
