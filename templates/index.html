@@ -1,6 +1,7 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8" />
     <title>Chess.com Player Lookup</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
@@ -8,7 +9,7 @@
     <div class="container">
         <h1>Search Chess.com Player</h1>
         <form method="POST">
-            <input type="text" name="username" placeholder="Enter username" required>
+            <input type="text" name="username" placeholder="Enter username" required />
             <button type="submit">Search</button>
         </form>
 
@@ -19,14 +20,31 @@
         {% if player %}
             <div class="player-info">
                 <h2>{{ player.username }}</h2>
-                <img src="{{ player.avatar }}" alt="Avatar" class="avatar">
-                <p>Name: {{ player.name }}</p>
-                <p>Title: {{ player.title }}</p>
-                <p>Status: {{ player.status }}</p>
-                <p>Country: {{ player.country }}</p>
+                {% if player.avatar %}
+                    <img src="{{ player.avatar }}" alt="Avatar" />
+                {% endif %}
+                <p>Name: {{ player.name or 'N/A' }}</p>
+                <p>Title: {{ player.title or 'N/A' }}</p>
+                <p>Status: {{ player.status or 'N/A' }}</p>
+                <p>Country: <a href="{{ player.country }}">{{ player.country }}</a></p>
                 <p>Followers: {{ player.followers }}</p>
                 <p><a href="/player/{{ player.username }}">View Stats</a></p>
             </div>
+        {% endif %}
+
+        {% if players %}
+            <h2>Searched Players</h2>
+            <ul class="player-list">
+                {% for p in players %}
+                    <li>
+                        {% if p.avatar %}
+                            <img src="{{ p.avatar }}" alt="Avatar" />
+                        {% endif %}
+                        <a href="/player/{{ p.username }}">{{ p.username }}</a>
+                        {% if p.name %} ({{ p.name }}) {% endif %}
+                    </li>
+                {% endfor %}
+            </ul>
         {% endif %}
     </div>
 </body>

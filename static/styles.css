@@ -1,22 +1,29 @@
-body {
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
     font-family: Arial, sans-serif;
-    background-color: #f3f3f3;
+    background-color: #ffc4d8;
     color: #333;
+}
+
+.flex-center {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     padding: 20px;
 }
 
 .container {
+    width: 100%;
     max-width: 600px;
-    margin: auto;
     background: white;
     padding: 30px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-h1 {
     text-align: center;
-    color: #2c3e50;
 }
 
 form {
@@ -47,11 +54,10 @@ button:hover {
 
 .error {
     color: red;
-    text-align: center;
+    margin-top: 10px;
 }
 
 .player-info {
-    text-align: center;
     margin-top: 20px;
 }
 
