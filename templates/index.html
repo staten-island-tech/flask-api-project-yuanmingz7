@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <title>Chess.com Player Lookup</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
 </head>
 <body>
     <div class="container">
@@ -26,7 +26,6 @@
                 <p>Name: {{ player.name or 'N/A' }}</p>
                 <p>Title: {{ player.title or 'N/A' }}</p>
                 <p>Status: {{ player.status or 'N/A' }}</p>
-                <p>Country: <a href="{{ player.country }}">{{ player.country }}</a></p>
                 <p>Followers: {{ player.followers }}</p>
                 <p><a href="/player/{{ player.username }}">View Stats</a></p>
             </div>

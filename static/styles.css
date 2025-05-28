@@ -1,70 +1,166 @@
-
-html, body {
-    height: 100%;
-    margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
-    background-color: #ffc4d8;
-    color: #333;
+/* General Reset */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.flex-center {
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
+/* Body Styling */
+body {
+  font-family: "Times New Roman", Times, serif;;
+  background-color: #ffb7d3;
+  color: #333;
+  line-height: 1.6;
+  padding: 20px;
 }
 
+/* Container Styling */
 .container {
-    width: 100%;
-    max-width: 600px;
-    background: white;
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    text-align: center;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #facfe3;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
+/* Header Styling */
+h1 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 20px;
+  font-size: 2.5rem;
+}
+
+/* Form Styling */
 form {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
 }
 
 input[type="text"] {
-    padding: 10px;
-    width: 70%;
-    border: 1px solid #ccc;
-    border-radius: 5px 0 0 5px;
+  padding: 10px;
+  width: 60%;
+  background-color: #facfe3;
+  border: 2px solid #ff7fb4;
+  border-radius: 4px;
+  font-size: 1rem;
+  margin-right: 10px;
 }
 
 button {
-    padding: 10px;
-    border: none;
-    background-color: #2c3e50;
-    color: white;
-    border-radius: 0 5px 5px 0;
-    cursor: pointer;
+  padding: 10px 20px;
+  background-color: #fd33a9;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
 }
 
 button:hover {
-    background-color: #34495e;
+  background-color: #ffd3eb;
 }
 
+/* Error Message Styling */
 .error {
-    color: red;
-    margin-top: 10px;
+  color: red;
+  text-align: center;
+  margin-top: 20px;
+  font-size: 1.2rem;
 }
 
+/* Player Info Styling */
 .player-info {
-    margin-top: 20px;
+  text-align: center;
+  margin-top: 20px;
 }
 
-.avatar {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    object-fit: cover;
-    margin-bottom: 10px;
+.player-info img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  margin-bottom: 20px;
+}
+
+.player-info h2 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.player-info p {
+  font-size: 1.2rem;
+  margin: 5px 0;
+}
+
+.player-info a {
+  color: #ffcfeb;
+  text-decoration: none;
+}
+
+.player-info a:hover {
+  text-decoration: underline;
+}
+
+/* Searched Players List Styling */
+.player-list {
+  list-style-type: none;
+  padding: 0;
+  margin-top: 20px;
+}
+
+.player-list li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+  padding: 10px;
+  background-color: #ffccdf;
+  border: 4px solid #ff1f7c;
+  border-radius: 4px;
+}
+
+.player-list li img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-right: 15px;
+}
+
+.player-list li a {
+  color: #ff5cbb;
+  font-size: 1.2rem;
+  text-decoration: none;
+  flex-grow: 1;
+}
+
+.player-list li a:hover {
+  text-decoration: underline;
+}
+
+/* Player Stats Styling */
+.player-stats {
+  margin-top: 20px;
+}
+
+.player-stats h3 {
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.player-stats ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.player-stats li {
+  font-size: 1.2rem;
+  margin: 10px 0;
+  padding: 10px;
+  background-color: #ffe7f1;
+  border-radius: 4px;
 }
