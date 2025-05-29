@@ -1,4 +1,4 @@
-/* General Reset */
+
 *,
 *::before,
 *::after {
@@ -7,16 +7,14 @@
   box-sizing: border-box;
 }
 
-/* Body Styling */
 body {
   font-family: "Times New Roman", Times, serif;;
   background-color: #ffb7d3;
-  color: #333;
+  color: #ff0077;
   line-height: 1.6;
   padding: 20px;
 }
 
-/* Container Styling */
 .container {
   max-width: 900px;
   margin: 0 auto;
@@ -26,15 +24,13 @@ body {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* Header Styling */
 h1 {
   text-align: center;
-  color: #333;
+  color: #ff008c;
   margin-bottom: 20px;
   font-size: 2.5rem;
 }
 
-/* Form Styling */
 form {
   display: flex;
   justify-content: center;
@@ -65,7 +61,6 @@ button:hover {
   background-color: #ffd3eb;
 }
 
-/* Error Message Styling */
 .error {
   color: red;
   text-align: center;
@@ -73,7 +68,6 @@ button:hover {
   font-size: 1.2rem;
 }
 
-/* Player Info Styling */
 .player-info {
   text-align: center;
   margin-top: 20px;
@@ -105,7 +99,6 @@ button:hover {
   text-decoration: underline;
 }
 
-/* Searched Players List Styling */
 .player-list {
   list-style-type: none;
   padding: 0;
@@ -140,7 +133,6 @@ button:hover {
   text-decoration: underline;
 }
 
-/* Player Stats Styling */
 .player-stats {
   margin-top: 20px;
 }
@@ -161,6 +153,6 @@ button:hover {
   font-size: 1.2rem;
   margin: 10px 0;
   padding: 10px;
-  background-color: #ffe7f1;
+  background-color: #f7b3cf;
   border-radius: 4px;
 }
